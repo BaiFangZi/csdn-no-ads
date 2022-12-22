@@ -1,6 +1,16 @@
 // 等待HTML解析完成
-window.addEventListener('load', () => {
+
+try {
   console.log('插件被加载')
+  handle()
+} catch () {
+  window.addEventListener('load', () => {
+    handle()
+  })
+}
+
+function handle() {
+  document.querySelector('a.option-box.sidecolumn.sidecolumn-show').click()
   let adSelector = ['.toolbar-advert', '#footerRightAds']
 
   for (let i = 0; i < adSelector.length; i++) {
@@ -11,4 +21,4 @@ window.addEventListener('load', () => {
       adContainer.parentNode.removeChild(adContainer)
     }
   }
-})
+}
