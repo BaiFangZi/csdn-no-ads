@@ -3,22 +3,25 @@
 try {
   console.log('插件被加载')
   handle()
-} catch () {
+} catch (err) {
+  console.log(err)
   window.addEventListener('load', () => {
     handle()
   })
 }
 
 function handle() {
-  document.querySelector('a.option-box.sidecolumn.sidecolumn-show').click()
-  let adSelector = ['.toolbar-advert', '#footerRightAds']
+  // 直接隐藏侧边栏
+  document.querySelector('a.option-box.sidecolumn.sidecolumn-hide').click()
+  // 不便利查询了
+  // let adSelector = ['.toolbar-advert', '#footerRightAds', '#recommendAdBox', '.programmer1Box']
 
-  for (let i = 0; i < adSelector.length; i++) {
-    let adContainer = document.querySelector(adSelector[i])
-    // adContainer&&    adContainer.style.display = 'none'
-    if (adContainer) {
-      // adContainer.style.display = 'none'
-      adContainer.parentNode.removeChild(adContainer)
-    }
-  }
+  // for (let i = 0; i < adSelector.length; i++) {
+  //   let adContainer = document.querySelector(adSelector[i])
+  //   // adContainer&&    adContainer.style.display = 'none'
+  //   if (adContainer) {
+  //     // adContainer.style.display = 'none'
+  //     adContainer.parentNode.removeChild(adContainer)
+  //   }
+  // }
 }
