@@ -2,17 +2,24 @@
 
 try {
   console.log('插件被加载')
+  // document.querySelector('a.option-box.sidecolumn.sidecolumn-hide').click()
   handle()
 } catch (err) {
   console.log(err)
-  window.addEventListener('load', () => {
-    handle()
-  })
+  // window.addEventListener('load', () => {
+  //   handle()
+  // })
 }
 
 function handle() {
   // 直接隐藏侧边栏
-  document.querySelector('a.option-box.sidecolumn.sidecolumn-hide').click()
+  if (location.host == 'blog.csdn.net') {
+    document.querySelector('a.option-box.sidecolumn.sidecolumn-hide').click()
+  }
+
+  if (location.host == 'www.jianshu.com') {
+    document.querySelector('aside > div').style.display = 'none'
+  }
   // 不便利查询了
   // let adSelector = ['.toolbar-advert', '#footerRightAds', '#recommendAdBox', '.programmer1Box']
 

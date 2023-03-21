@@ -6,9 +6,9 @@
   "icons": {},
   "content_scripts": [
     {
-      "matches": ["https://blog.csdn.net/*"],
+      "matches": ["https://blog.csdn.net/*","https://www.jianshu.com/*"],
       "js": ["js/index.js"],
-      "run_at": "document_end"
+      "run_at": "document_idle"
     }
   ],
   "permissions": []
